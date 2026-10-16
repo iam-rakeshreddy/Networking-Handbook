@@ -2,7 +2,7 @@
 
 > **Purpose:** Learn IPv4 addressing, subnet masks, IP classes, CIDR notation, subnetting, the block size method, and practical questions with step-by-step solutions.
 >
-> **Use this README for:** Quick revision, networking fundamentals, CCNA preparation, Linux/network administration, and technical interviews.
+
 
 ---
 
