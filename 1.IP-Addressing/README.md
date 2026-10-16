@@ -783,156 +783,6 @@ Since the third octet is `100`, the network begins at `100`.
 
 ---
 
-# 12. Practice Questions
-
-Try solving these before checking the answer key.
-
-## Beginner level
-
-1. How many bits are present in an IPv4 address?
-2. What is the subnet mask for `/24`?
-3. How many usable hosts are available in `/29`?
-4. Which class historically contains `200.10.10.1`?
-5. Is `192.168.10.5` a private IP address?
-
-## Intermediate level
-
-6. Find the network address of `192.168.1.150/26`.
-7. Find the broadcast address of `192.168.1.150/26`.
-8. Find the usable host range of `192.168.10.90/27`.
-9. How many `/28` subnets can be created from a `/24`?
-10. What is the subnet mask for `/20`?
-
-## Advanced level
-
-11. Find the network and broadcast addresses of `10.10.75.200/22`.
-12. Find the network and broadcast addresses of `172.16.45.130/20`.
-13. You need at least 100 usable hosts per subnet. Which prefix should you choose?
-14. You need at least 12 equal-sized subnets from a `/24`. What is the smallest conventional fixed-length subnet size that provides enough subnets, and how many usable hosts does each have?
-15. Divide `192.168.20.0/24` into four equal subnets. List their network addresses.
-
----
-
-## Answer Key with Short Solutions
-
-### 1. IPv4 address size
-
-**Answer: 32 bits.**
-
-### 2. Mask for `/24`
-
-**Answer: `255.255.255.0`.**
-
-### 3. Usable hosts in `/29`
-
-Host bits = `3`
-
-Total = `2^3 = 8`
-
-Usable = `8 - 2 = 6`
-
-**Answer: 6.**
-
-### 4. Class of `200.10.10.1`
-
-First octet = `200`, which is in the historical Class C range.
-
-**Answer: Class C.**
-
-### 5. Is `192.168.10.5` private?
-
-Yes. It falls in `192.168.0.0/16`.
-
-**Answer: Yes.**
-
-### 6. Network address of `192.168.1.150/26`
-
-Mask = `255.255.255.192`
-
-Block size = `64`
-
-Blocks: `0–63`, `64–127`, `128–191`, `192–255`
-
-**Answer: `192.168.1.128`.**
-
-### 7. Broadcast address of `192.168.1.150/26`
-
-The subnet range is `192.168.1.128–192.168.1.191`.
-
-**Answer: `192.168.1.191`.**
-
-### 8. Usable range of `192.168.10.90/27`
-
-Block size = `32`
-
-The address falls in the `64–95` block.
-
-- Network: `192.168.10.64`
-- Broadcast: `192.168.10.95`
-
-**Answer: `192.168.10.65–192.168.10.94`.**
-
-### 9. `/28` subnets from `/24`
-
-Borrowed bits = `28 - 24 = 4`
-
-Subnets = `2^4 = 16`
-
-**Answer: 16 subnets.**
-
-### 10. Mask for `/20`
-
-**Answer: `255.255.240.0`.**
-
-### 11. `10.10.75.200/22`
-
-Mask = `255.255.252.0`
-
-Block size in third octet = `256 - 252 = 4`
-
-The third-octet block containing `75` is `72–75`.
-
-- Network: `10.10.72.0`
-- Broadcast: `10.10.75.255`
-
-### 12. `172.16.45.130/20`
-
-Mask = `255.255.240.0`
-
-Block size in third octet = `16`
-
-The block containing `45` is `32–47`.
-
-- Network: `172.16.32.0`
-- Broadcast: `172.16.47.255`
-
-### 13. At least 100 usable hosts
-
-A `/25` has 126 usable hosts.
-
-A `/26` has only 62.
-
-**Answer: `/25`.**
-
-### 14. At least 12 subnets from `/24`
-
-Borrow 4 bits:
-
-`2^4 = 16` subnets.
-
-New prefix = `/28`.
-
-Each `/28` has 16 total addresses and 14 conventional usable hosts.
-
-**Answer: `/28`, giving 16 subnets with 14 usable hosts each.**
-
-### 15. Four equal subnets from `192.168.20.0/24`
-
-Borrow 2 bits:
-
-`/24 + 2 = /26`
-
-Block size = `64`.
 
 **Network addresses:**
 
@@ -943,7 +793,7 @@ Block size = `64`.
 
 ---
 
-# 13. Common Mistakes
+# 12. Common Mistakes
 
 1. **Confusing the network address with a host address.**  
    The network address identifies the subnet; it is not normally assigned to a host.
@@ -971,7 +821,7 @@ Block size = `64`.
 
 ---
 
-# 14. One-Minute Revision Sheet
+# 13. One-Minute Revision Sheet
 
 ## Must-remember formulas
 
@@ -1042,31 +892,3 @@ Class E = 240–255 (reserved/experimental)
 
 ---
 
-## Recommended Learning Order
-
-- [ ] Understand IPv4 binary and decimal conversion.
-- [ ] Memorize subnet masks and CIDR prefixes.
-- [ ] Learn the difference between network, host, and broadcast addresses.
-- [ ] Practice `/24`, `/25`, `/26`, `/27`, and `/28`.
-- [ ] Practice block size calculations in the third octet.
-- [ ] Solve the 15 practice questions without checking the answers.
-- [ ] Revisit the one-minute revision sheet before interviews or exams.
-
-## Final takeaway
-
-**If you remember only three things, remember these:**
-
-1. `Host bits = 32 - CIDR prefix`
-2. `Total addresses = 2^(host bits)`
-3. `Block size = 256 - subnet mask value in the interesting octet`
-
-Master these three rules, and most basic IPv4 subnetting problems become much easier.
-
----
-
-### Further Reading
-
-- RFC 1918 — Address Allocation for Private Internets: https://www.rfc-editor.org/rfc/rfc1918
-- RFC 4632 — Classless Inter-domain Routing (CIDR): https://www.rfc-editor.org/rfc/rfc4632
-- RFC 3021 — Using 31-Bit Prefixes on IPv4 Point-to-Point Links: https://www.rfc-editor.org/rfc/rfc3021
-- RFC 791 — Internet Protocol: https://www.rfc-editor.org/rfc/rfc791
