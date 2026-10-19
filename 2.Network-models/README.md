@@ -15,7 +15,7 @@
 - [9. Real-World Example: Opening a Website](#9-real-world-example-opening-a-website)
 - [10. Important Protocols and Their Layers](#10-important-protocols-and-their-layers)
 - [11. Quick Revision Notes](#11-quick-revision-notes)
-- [12. Practice Questions with Answers](#12-practice-questions-with-answers)
+
 
 ---
 
